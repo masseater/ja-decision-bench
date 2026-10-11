@@ -36,6 +36,9 @@ catalog:
   skills: 1.7.1
   "@tanstack/intent": 0.5.5
   "@openrouter/sdk": 1.4.25
+  recharts: 3.8.0
+  ml-confusion-matrix: 2.0.0
+  forecast-calibration-kit: 0.1.2
 catalogs:
   stack:
     "@effect/atom-react": 4.0.0

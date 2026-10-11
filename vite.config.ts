@@ -95,7 +95,6 @@ export default defineConfig({
           contracts: [
             { pattern: "^Table(Head|Cell)$", allow: ["text-alignment", "fvn-spacing"] },
             { pattern: "^TableCaption$", allow: ["caption", "text-alignment", "mt-*", "mb-*"] },
-            { pattern: "^ChartContainer$", allow: ["aspect-*", "h-*"] },
           ],
         },
       ],

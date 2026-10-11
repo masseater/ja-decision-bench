@@ -32,7 +32,9 @@ const TASKS = [
   },
 ] as const;
 
-const MODELS = [{ id: "respan/span-01-lite", label: "span-01 lite", choiceVia: "noul" }] as const;
+const MODELS = [
+  { provider: "openrouter", id: "respan/span-01-lite", label: "span-01 lite", choiceVia: "noul" },
+] as const;
 
 type Task = (typeof TASKS)[number] & Readonly<{ items: readonly Item[] }>;
 
@@ -151,6 +153,7 @@ const runModel = Effect.fn("runModel")(function* runModel(
     },
   );
   return {
+    provider: model.provider,
     model: model.id,
     label: model.label,
     choiceVia: model.choiceVia,

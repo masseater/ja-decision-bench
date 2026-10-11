@@ -89,6 +89,15 @@ export default defineConfig({
       "drizzle/enforce-delete-with-where": "error",
       "drizzle/enforce-update-with-where": "error",
       ...allRulesOf("shadcn", shadcn),
+      "shadcn/no-restyle": [
+        "error",
+        {
+          contracts: [
+            { pattern: "^Table(Head|Cell)$", allow: ["text-alignment", "fvn-spacing"] },
+            { pattern: "^TableCaption$", allow: ["caption", "text-alignment", "mt-*", "mb-*"] },
+          ],
+        },
+      ],
       ...allRulesOf("baseline-js", baselineJs),
       ...baselineJs.configs.recommended().rules,
       ...asErrors(Object.keys(htmlReact.configs.all.rules ?? {})),

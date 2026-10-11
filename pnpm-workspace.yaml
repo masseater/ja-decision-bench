@@ -80,6 +80,7 @@ allowBuilds:
   core-js-pure: false
   dtrace-provider: false
   re2: true
+  "@openrouter/sdk": false
 packageExtensions:
   "@feature-sliced/steiger-plugin@0.8.0":
     dependencies:

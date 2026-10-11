@@ -33,6 +33,7 @@ const TASKS = [
 ] as const;
 
 const MODELS = [
+  { provider: "openrouter", id: "typesafe/jev-1.13", label: "Jev 1.13", choiceVia: "choice" },
   { provider: "openrouter", id: "respan/span-01-lite", label: "span-01 lite", choiceVia: "noul" },
 ] as const;
 

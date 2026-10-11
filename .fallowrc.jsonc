@@ -2,6 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
   "production": true,
   "entry": ["tools/bench/src/run.ts"],
+  "boundaries": {
+    "preset": "feature-sliced",
+    "zones": [
+      { "name": "app", "patterns": ["apps/web/src/app/**"] },
+      { "name": "pages", "patterns": ["apps/web/src/pages/**"] },
+      { "name": "widgets", "patterns": ["apps/web/src/widgets/**"] },
+      { "name": "features", "patterns": ["apps/web/src/features/**"] },
+      { "name": "entities", "patterns": ["apps/web/src/entities/**"] },
+      { "name": "shared", "patterns": ["apps/web/src/shared/**"] },
+    ],
+  },
   "typeAware": { "enabled": true, "require": "complete" },
   "failOnParseError": true,
   "ignorePatterns": [".claude/**"],

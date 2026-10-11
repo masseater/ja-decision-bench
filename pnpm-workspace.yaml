@@ -37,8 +37,12 @@ catalog:
   "@tanstack/intent": 0.5.5
   "@openrouter/sdk": 1.4.25
   recharts: 3.8.0
+  lucide-react: 1.53.0
   ml-confusion-matrix: 2.0.0
   forecast-calibration-kit: 0.1.2
+  seedrandom: 3.0.5
+  simple-statistics: 7.12.1
+  "@types/seedrandom": 3.0.8
 catalogs:
   stack:
     "@effect/atom-react": 4.0.0

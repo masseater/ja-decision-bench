@@ -143,7 +143,7 @@ export default defineConfig({
             "Ruleset",
             "Stack",
           ],
-          capIsNewExceptionPattern: "^(Config|Context|Data|Schema|D1|Website)\\.",
+          capIsNewExceptionPattern: "^(Config|Context|Data|Persistable|Schema|D1|Website)\\.",
         },
       ],
       "typescript/no-empty-interface": ["error", { allowSingleExtends: true }],

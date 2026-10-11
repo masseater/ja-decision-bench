@@ -157,7 +157,7 @@ jobs:
 
   deploy:
     needs: verify
-    if: github.event_name == 'push' && github.repository == 'masseater/ja-decision-bench'
+    if: github.event_name == 'push' && github.repository == 'masseater/mst-ja-decision-bench'
     runs-on: ubuntu-latest
     permissions:
       contents: read

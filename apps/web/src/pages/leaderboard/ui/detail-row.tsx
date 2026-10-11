@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 
-import type { ModelResult, TaskResult } from "#/pages/leaderboard/model/summary";
+import type { TaskResult } from "#/pages/leaderboard/model/summary";
 
 import { failureRate, percent, usd } from "./format";
 
 const DetailRow = ({
-  model,
+  label,
   result,
-}: Readonly<{ model: ModelResult; result: TaskResult }>): ReactNode => (
+}: Readonly<{ label: string; result: TaskResult }>): ReactNode => (
   <tr className="border-t tabular-nums">
     <th scope="row" className="py-2 pr-3 text-left font-medium">
-      {model.label}
+      {label}
     </th>
     <td className="py-2 pr-3 text-right">{percent(result.test.skill)}</td>
     <td className="py-2 pr-3 text-right">{percent(result.test.raw)}</td>

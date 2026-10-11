@@ -6,9 +6,14 @@ import { failureRate } from "./format";
 
 const UNSUPPORTED = "未対応";
 
-const supportText = (result: Readonly<TaskResult>): string => {
+const SPLIT = "Noul 分割・";
+
+const supportText = (model: Readonly<ModelResult>, result: Readonly<TaskResult>): string => {
   if (result.support === "unsupported") {
     return UNSUPPORTED;
+  }
+  if (model.choiceVia === "noul" && result.format === "choice") {
+    return `${SPLIT}失敗 ${failureRate(result.test)}`;
   }
   return `失敗 ${failureRate(result.test)}`;
 };
@@ -20,7 +25,7 @@ const SupportRow = ({ model }: Readonly<{ model: ModelResult }>): ReactNode => (
     </th>
     {model.tasks.map((result) => (
       <td key={result.task} className="py-2 pr-3 tabular-nums">
-        {supportText(result)}
+        {supportText(model, result)}
       </td>
     ))}
   </tr>

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { displayLabel } from "#/pages/leaderboard/model/display-label";
 import { entriesOf } from "#/pages/leaderboard/model/ranking";
 
 import { DetailRow } from "./detail-row";
@@ -15,7 +16,7 @@ const DetailTable = ({ task, label }: Readonly<{ task: string; label: string }>)
     </thead>
     <tbody>
       {entriesOf(task).map(({ model, result }) => (
-        <DetailRow key={model.model} model={model} result={result} />
+        <DetailRow key={model.model} label={displayLabel({ model, result })} result={result} />
       ))}
     </tbody>
   </table>

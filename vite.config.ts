@@ -157,7 +157,8 @@ export default defineConfig({
         "error",
         {
           capIsNewExceptions: ["CloudflareApiLive", "Stack"],
-          capIsNewExceptionPattern: "^(Config|Context|Data|Persistable|Schema|D1|Website)\\.",
+          capIsNewExceptionPattern:
+            "^(Config|Context|Data|Persistable|Schema|D1|Rules|Ruleset|Website)\\.",
         },
       ],
       "typescript/no-empty-interface": ["error", { allowSingleExtends: true }],

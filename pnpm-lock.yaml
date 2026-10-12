@@ -489,9 +489,9 @@ importers:
       '@tanstack/react-start':
         specifier: catalog:stack
         version: 1.168.60(@vitejs/plugin-rsc@0.5.36(@voidzero-dev/vite-plus-core@1.1.0(@types/node@26.6.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(typescript@7.0.2)(yaml@2.9.1))(react-dom@19.3.0(react@19.3.0))(react-server-dom-webpack@19.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(webpack@5.111.1(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.4))(uglify-js@3.19.3)))(react@19.3.0))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@26.6.4)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(typescript@7.0.2)(yaml@2.9.1))(esbuild@0.28.1)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(rolldown@1.2.5)(supports-color@7.2.0)(webpack@5.111.1(esbuild@0.28.1)(lightningcss@1.33.0)(postcss@8.5.28)(sharp@0.35.5(@types/node@26.6.4))(uglify-js@3.19.3))
-      bench:
+      bench-summary:
         specifier: workspace:*
-        version: link:../../tools/bench
+        version: link:../../libs/bench-summary
       better-auth:
         specifier: catalog:stack
         version: 1.7.7(59258a4da89d7f0eec9b695b936e1569)
@@ -590,6 +590,12 @@ importers:
         specifier: catalog:stack
         version: 1.1.0(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(@vitest/ui@5.0.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(typescript@7.0.2)(yaml@2.9.1)
 
+  libs/bench-summary:
+    dependencies:
+      effect:
+        specifier: 4.0.0
+        version: 4.0.0
+
   tools/bench:
     dependencies:
       '@effect/platform-node':
@@ -598,6 +604,9 @@ importers:
       '@openrouter/sdk':
         specifier: 'catalog:'
         version: 1.4.25
+      bench-summary:
+        specifier: workspace:*
+        version: link:../../libs/bench-summary
       effect:
         specifier: 4.0.0
         version: 4.0.0

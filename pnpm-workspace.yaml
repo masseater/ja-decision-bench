@@ -23,7 +23,7 @@ catalog:
   eslint-plugin-react-hooks: 7.1.1
   syncpack: 15.3.3
   vite: npm:@voidzero-dev/vite-plus-core@1.1.0
-  jev-lint: 0.7.0
+  "@r_masseater/oxlint-plugin-decision": 0.0.3
   "@eslint/config-helpers": 0.7.0
   eslint-plugin-no-comments: 1.2.1
   eslint-plugin-baseline-js: 0.7.4
@@ -43,8 +43,10 @@ catalog:
   seedrandom: 3.0.5
   simple-statistics: 7.12.1
   "@types/seedrandom": 3.0.8
+  "@yarnpkg/parsers": 3.1.0
 catalogs:
   stack:
+    "@distilled.cloud/cloudflare": 1.0.0-rc.13
     "@effect/atom-react": 4.0.0
     "@effect/tsgo": 0.50.0
     "@elysiajs/eden": 1.4.9
@@ -77,8 +79,6 @@ overrides:
 peerDependencyRules:
   allowAny:
     - vite
-  allowedVersions:
-    vite: "*"
 allowBuilds:
   "@ast-grep/cli": true
   esbuild: true
@@ -94,4 +94,5 @@ packageExtensions:
       "@steiger/toolkit": 0.2.3
 patchedDependencies:
   "@tanstack/eslint-plugin-start@0.1.0": patches/@tanstack__eslint-plugin-start@0.1.0.patch
-  jev-lint@0.7.0: patches/jev-lint@0.7.0.patch
+minimumReleaseAgeExclude:
+  - "@r_masseater/oxlint-plugin-decision@0.0.3"

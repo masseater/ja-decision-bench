@@ -131,6 +131,17 @@ export default defineConfig({
             { from: "package", package: "clsx", name: "ClassValue" },
             {
               from: "package",
+              package: "@openrouter/sdk",
+              name: [
+                "DecisionsChoiceAnswer",
+                "DecisionsNoulAnswer",
+                "DecisionsScoreAnswer",
+                "Unknown",
+              ],
+            },
+            { from: "package", package: "recharts", name: "TooltipPayloadEntry" },
+            {
+              from: "package",
               package: "effect",
               name: ["Cause", "Context", "Effect", "Exit", "Layer", "Option"],
             },

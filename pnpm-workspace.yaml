@@ -44,6 +44,7 @@ catalog:
   simple-statistics: 7.12.1
   "@types/seedrandom": 3.0.8
   "@yarnpkg/parsers": 3.1.0
+  jose: 6.2.12
 catalogs:
   stack:
     "@distilled.cloud/cloudflare": 1.0.0-rc.13

@@ -3,13 +3,13 @@ import { D1, Rules, Ruleset, Website, Workers, providers, state } from "alchemy/
 import type { InferEnv } from "alchemy/Cloudflare";
 import { Config, Effect, Schema } from "effect";
 
-import { APP_NAME, CI_TELEMETRY_AUDIENCE } from "./app-name.ts";
+import { APP_NAME, CI_TELEMETRY_AUDIENCE, LIST_PREFIX, requireAppPrefix } from "./app-name.ts";
 
 const TRACE_SAMPLING_RATE = 0.1;
 const ZONE = "masseater.dev";
 const BASE_PATH = "/decision-bench";
 const LEGACY_HOST = "mst-ja-decision-bench.masseater.dev";
-const LEGACY_REDIRECT_LIST = "mst_ja_decision_bench_legacy_host";
+const LEGACY_REDIRECT_LIST = `${LIST_PREFIX}legacy_host`;
 
 const web = Effect.gen(function* web() {
   const DB = yield* D1.Database("DB", { migrations: "./drizzle" });
@@ -88,6 +88,7 @@ export default Stack(
     const { url } = yield* web;
     yield* legacyHostRedirect;
     yield* ciTelemetry;
+    yield* requireAppPrefix;
     return { url };
   }),
 );

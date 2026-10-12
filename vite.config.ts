@@ -244,6 +244,7 @@ export default defineConfig({
           "steiger-all",
           "db-check-all",
           "fallow-all",
+          "gitleaks",
         ],
       },
       "test-all": "vp run -r test",

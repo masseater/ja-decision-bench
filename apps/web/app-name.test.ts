@@ -5,7 +5,9 @@ import { inMemoryState } from "alchemy/State";
 import { Effect, Exit, Layer, Match } from "effect";
 import { expect, test } from "vite-plus/test";
 
-import { APP_NAME, LIST_PREFIX, requireAppPrefix } from "./app-name.ts";
+import { APP_NAME, requireAppPrefix } from "./app-name.ts";
+
+const LIST_PREFIX = `${APP_NAME.replaceAll("-", "_")}_`;
 
 type Resource =
   | Readonly<{ type: "database"; props: Readonly<{ name?: string }> }>

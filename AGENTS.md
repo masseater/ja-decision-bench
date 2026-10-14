@@ -38,6 +38,18 @@ release. Add a tool name to select part of the graph. For example, run
 
 <!--VITE PLUS END-->
 
+## コマンド
+
+- `vp run verify` は `vp check` と、`vite.config.ts` の `verify` タスクの `dependsOn` に並ぶ検査をすべて動かす。pre-push フックも同じものを動かす。
+- ベンチは `tools/bench` で `vp run bench` で動かす。`bench` は `package.json` ではなく `tools/bench/vite.config.ts` のタスクである。
+- 1 つのテストは、そのパッケージで `vp test run <ファイル>` で動かす。
+
+## 構成
+
+- `tools/bench` は `data/` の JSONL を読み、OpenRouter の応答を `cache/` に、モデルごとの結果を `results/` に保存する。どちらもコミットするので、再実行は成功済みの判定を呼び直さない。
+- `vp run bench` は README の `results:start`〜`results:end` の表と `libs/bench-summary/summary.json` を書き換える。`apps/web` はこの JSON を読んでリーダーボードを出す。
+- `apps/web` は `masseater.dev` ゾーンの `/decision-bench` に Worker のルートで載る。ゾーンは masseater/masseater.dev が持つので、`OWNED_ZONE` は `Option.none()` のままにする。
+
 ## 環境変数
 
 - 環境変数は環境ごとに変わる値だけにする。変わらない値はコードか Alchemy の設定に、ツールにフラグがあればフラグにする。
